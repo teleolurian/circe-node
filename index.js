@@ -18,7 +18,7 @@ app.post('/quote', function(request, response) {
     fields: FIELDS,
     symbol: symbol
   }).then(function (snapshot){
-    var message = '$' + symbol + ': $' + snapshot.ask + '( ' + snapshot.change + ' / ' + snapshot.changeInPercent + '% )';
+    var message = '$' + symbol + ': $' + snapshot.ask + '  ( $' + snapshot.change + ' / ' + snapshot.changeInPercent + '% )';
     response.header('Content-Type', 'application/json');
     response.send(JSON.stringify({
       color: 'gray',
